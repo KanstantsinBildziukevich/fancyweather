@@ -1,0 +1,386 @@
+@import url(./reset.css);
+
+html {
+    margin:0;
+    height:100vh;
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    position: relative;
+    background: linear-gradient(rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%) center center / cover fixed, url(../public/images/bg-default.jpg) center center no-repeat fixed;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 1.8rem;
+    margin:0;
+    height:100vh;
+}
+
+#city {
+    height: 36px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 3.6rem;
+    color: rgb(207, 202, 202);
+    overflow: hidden;
+}
+
+.weather-status {
+    height: 22px;
+    width: 300px;
+    font-weight: 500;
+    font-size: 2rem;
+    color: rgb(207, 202, 202);
+}
+
+#day-time {
+    height: 20px;
+    width: 520px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: rgb(204, 204, 204);
+}
+
+.box-search {
+    display: flex;
+    position: absolute;
+    top: 5%;
+    right: 35px;
+    background-color: rgbа(63, 58, 58, 0,7);
+}
+
+.box-map {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 16%;
+    right: 15px;
+    width: 310px;
+    height: 400px;
+    justify-content: flex-start;
+}
+
+.map {
+    width: 285px;
+    height: 300px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 81%, 80% 81%, 85% 99%, 60% 81%, 0 82%);
+}
+
+.longitude, .latitude{
+    width: 285px;
+    height: 15px;
+    font-size: 1.1rem;
+    color: rgb(190, 190, 192);
+}
+
+.box-settings {
+    display: flex;
+    position: absolute;
+    top: 4%;
+    left: 35px;
+}
+
+.header-settings {
+    flex-direction: row;
+    padding: 2% 2% 2% 0;
+    justify-content: center;
+}
+
+.search_button {
+    width: 49px;
+    height: 49px;
+    transition: .5s linear;
+    cursor: pointer;
+    background: url(https://img.icons8.com/metro/26/000000/search.png) no-repeat center center; 
+    border: 2px dotted rgb(204, 204, 204);
+    border-radius: 5px;
+    filter: invert(0.6);
+    margin-left: 2px;
+}
+
+.search_button:hover {
+    box-shadow: 0 5px 15px rgba(158, 204, 248, 0.911);
+}
+
+
+.button_load {
+    padding: 5px 10px;
+}
+
+.button_load:hover {
+    box-shadow: 0 5px 15px rgba(158, 204, 248, 0.911);
+}
+
+
+.button_en {
+    padding: 5px 10px;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+.button_ru {
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+.button_be {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 0 5px 5px 0;
+}
+
+.button_F {
+    padding: 5px 10px;
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+.button_C {
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    border-left: 1px solid rgb(204, 204, 204);
+}
+
+.refresh {
+    background: url(../public/images/update-button.svg) no-repeat center center;  
+    border: 2px solid rgb(66, 65, 65);
+    border-radius: 5px;
+    transition: .5s linear;
+    cursor: pointer;
+    background-color: transparent;
+    outline: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: rgb(65, 65, 65);
+    height: 40px;
+    filter: invert(1);
+}
+
+.button {
+    border: 2px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    transition: .5s linear;
+    cursor: pointer;
+    background-color: transparent;
+    outline: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: rgb(204, 204, 204);
+    height: 40px;
+}
+
+p {
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(207, 198, 198);
+}
+
+.button:hover {
+    box-shadow: 0 5px 15px rgba(158, 204, 248, 0.911);
+}
+
+.container-2 {
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.container-2 input#search {
+    width: 50px;
+    height: 50px;
+    background: rgba(236, 234, 234, 0.3);
+    border: 2px solid rgb(204, 204, 204);
+    font-size: 10pt;
+    float: left;
+    color: rgba(255, 255, 255, .8);
+    padding-left: 35px;
+    border-radius: 5px;
+    color: rgb(212, 208, 208);
+    transition: width .55s ease;
+}
+
+.container-2 input#search {
+    outline:none;
+    width: 300px;
+    padding-left: 48px;
+    padding-right: 24px;
+    cursor: pointer;
+}
+
+.forecast {
+    display: flex;
+    margin-top: 64px;
+}
+
+.forecast li {
+    margin-right: 32px;
+}
+
+.active {
+    background-color: rgba(236, 234, 234, 0.3);
+}
+
+.forecast li h3 img{
+    position: relative;
+    width: 20%;
+    height: 20%;
+    z-index: 9999;
+    margin-right: 32px;
+}
+
+.forecast h3 {
+    font-weight: 600;
+}
+
+.forecast p {
+    font-size: 6.4rem;
+    font-weight: 500;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(.7);
+}
+
+#image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.meta li#image {
+    height: 130px;
+    z-index: 9999;
+}
+
+.meta {
+    font-weight: 700;
+    margin-left: 16px;
+    width: 150px;
+    height: 210px;
+    color: rgb(204, 204, 204);
+}
+
+.meta li {
+    padding-top: 4px;
+    height: 17px;
+}
+
+section {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 650px;
+    height: 420px;
+}
+
+.weather-status span {
+    font-weight: 500;
+    height: 22px;
+    width: 300px;
+}
+
+.city-status {
+    height: 80px;
+    width: 100%;
+}
+
+#temperature {
+    font-weight: 700;
+    font-size: 25.6rem;
+    line-height: 80%;
+    margin-top: -40px;
+    color: rgb(209, 204, 204);
+}
+
+#temperature span {
+    vertical-align: text-top;
+    font-size: 8rem;
+}
+
+.weather {
+    display: flex;
+    align-items: flex-end;
+}
+
+@media all and (max-width: 650px) {
+
+    body {
+        font-size: 1.6rem;
+    }
+    
+    section {
+        left: 6%;
+    }
+
+    .meta {
+        margin-left: 8px;
+    }
+}
+
+@media all and (max-width: 540px) {
+    #temperature {
+        font-size: 22rem;
+    }
+
+    #city {
+        font-size: 2.8rem;
+    }
+}
+
+@media all and (max-width: 490px) {
+    .weather {
+        display: block;
+    }
+
+    .meta {
+        display: flex;
+        margin-top: 16px;
+    }
+
+    .meta li {
+        margin-right: 16px;
+    }
+}
+
+@media all and (max-width: 444px) {
+    .meta {
+        display: block;
+        margin-top: 32px;
+    }
+
+    .forecast p {
+        font-size: 5.2rem;
+    }
+
+    .forecast li {
+        margin-right: 16px;
+    }
+}
+
+@media all and (max-width: 340px) {
+    .forecast {
+        display: none;
+    }
+
+    .meta {
+        display: none;
+    }
+
+    section {
+        left: 5%;
+    }
+
+    #temperature {
+        font-size: 20rem;
+    }
+}

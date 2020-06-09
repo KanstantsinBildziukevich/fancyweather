@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">FancyWeather</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap&subset=cyrillic"
+    rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body id='body'></body>
+
+    <div class="box-settings header-settings">
+        <button class="button_load refresh" id="refresh"></button>
+        <button class="button button_en" id="en">EN</button>
+        <button class="button button_ru" id="ru">RU</button>
+        <button class="button button_be" id="be">BE</button>
+        <button class="button button_F" id="F">°F</button>
+        <button class="button button_C" id="C">°C</button>
+    </div>
+
+    <div class="box-search">
+        <div class="container-2">
+            <input type="search" id="search" placeholder="Search City" autocomplete="off"/>
+        </div>
+        <button class="search_button" id="search_button"></button>
+    </div>
+
+    <div class="box-map">
+        <div class="map" id="map"></div>
+        <p class="longitude" id="longitude"></p>
+        <p class="latitude" id="latitude"></p>
+    </div>
+    
+
+    <section>
+        <div class="city-status">
+            <p class="weather-status"><span id="status"></span></p>
+            <h2 id="city"></h2>
+            <h3 id="day-time"></h3>
+        </div>
+        <div class="weather">
+            <h1 id="temperature"></h1>
+            <ul class="meta">
+                <li id="image"></li>
+                <li class ="feels-like"></li>
+                <li class ="wind"></li>
+                <li class ="humidity"></li>
+            </ul>
+        </div>
+
+        <ul class="forecast">
+            <li id="forecast02">
+                <h3 class="day2"></h3>
+                <p class="temp2"></p>
+            </li>
+            <li id="forecast03">
+                <h3 class="day3"></h3>
+                <p class="temp3"></p>
+            </li>
+            <li id="forecast04">
+                <h3 class="day4"></h3>
+                <p class="temp4"></p>
+            </li>
+        </ul>
+    </section>
+
+</body>
+<script src = "../../dist/app.js"></script>
+    
+</html>
